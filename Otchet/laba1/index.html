@@ -1,0 +1,96 @@
+<!DOCTYPE <!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" 
+    href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="stylesheet" src="style.css">
+    <base href="/home" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <!-- <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components\angular-material\angular-material.min.css"></script> -->
+
+   
+    
+</head>
+<body ng-app="App">
+    <div ng-controller="AppCtrl" ng-cloak style=" height: 500px;">
+        <div layout="row"  layout-align="center stretch"> 
+            <div flex="30">
+                
+                <md-list  flex>
+                    <md-list-item ng-repeat="lab in labs" ng-click="test(lab)" >
+                        {{lab}}</md-list-item>
+                </md-list>
+            </div>
+            <div layout="column" flex="70">
+                <div flex = "30">
+                    <pre style="font-family: 'Lobster', cursive;">
+                                        Отчет
+                        о лабораторных работах по курсу
+                «Современные технологии Интернет-програмирования»
+                                        студента группы ІПЗ-16-1
+                                        Богуна М.С.
+
+                    </pre>
+                </div>
+                <div flex="100" style="height: 100%;">
+                    <md-nav-bar
+                    md-no-ink-bar="disableInkBar"
+                    md-selected-nav-item="currentNavItem"
+                    nav-bar-aria-label="navigation links">
+                    <md-nav-item href="/testt" md-nav-click="navBarZadanie()" name="page1">
+                      Условие ЛР
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="getResult()" name="page2" >
+                      Результат работы ЛР
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="programmCode()" name="page3">
+                      Программный код
+                    </md-nav-item>
+                  </md-nav-bar>
+                  <div class="ext-content"  ng-if="zadanie">
+                      <pre style="font-family: 'Lobster', cursive;">{{zadanie}} </pre>
+                  </div>
+                  <div class="ext-content" ng-if="pathCode">
+                        <div layout="row"  layout-align="center stretch" ng-if="pathCode"> 
+                                <div flex="15">
+                                    <md-list>
+                                        <md-list-item ng-repeat="path in pathCode" 
+                                        ng-click="getCode(path)" >{{path}}</md-list-item>
+                                    </md-list>
+                                </div>
+                                <div flex='85' >
+                                    <pre>{{code}}</pre>
+                                </div>
+                                </div>
+                  </div>
+                  <div ng-if="result">
+                    <ng-view></ng-view>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="../laba2/appLaba2.js"></script>
+  <script type="module" src="../laba3/appLaba3.js"></script>
+  <script type="module" src="../laba6/appLaba6.js"></script>
+  <script type="module" src="../laba4/appLaba4.js"></script>
+</body>
+</html>

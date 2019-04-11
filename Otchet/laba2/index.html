@@ -1,0 +1,80 @@
+<div ng-controller="laba2">
+        <md-content style="height: 100%;">
+                <md-tabs class="md-primary" md-center-tabs>
+                  <md-tab label="Площадь сеектора центрального угла">
+                    <md-content class="md-padding">
+                            <b>Результат: {{result}} радиан</b>
+                            <form ng-submit="calc()">
+                                <div class="form-group">
+                                        <label>Введите радиус(рад)</label>
+                                        <input ng-model="radius" type="text" >
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                        <label>Введите угол(Только в радианах!)</label>
+                                        <input ng-model="angle" type="text" >
+                                </div>
+                                <md-button type="submit" class="md-primary">Расчитать</md-button>
+                            </form> 
+                    </md-content>
+                    </md-tab>
+              
+                <md-tab label="боковая поверхность">
+                    <md-content>
+                            <b>Результат: {{result}} радиан</b>
+                            <form ng-submit="calc2()">
+                                    <div class="form-group">
+                                            <label>Введите радиус(рад)</label>
+                                            <input ng-model="radius2" type="text" >
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                            <label>Введите высоту конуса(см)</label>
+                                            <input ng-model="heig" type="text" >
+                                    </div>
+                                    <md-button class="md-primary" type="submit">Расчитать</md-button>
+                                </form> 
+
+                    </md-content>
+                    </md-tab>
+                    <md-tab label="задание  трегольником" style="height: 600px;">
+                        <md-content style="height: 600px;">
+                                <img src="https://planetcalc.ru/users/2/1254169590.JPG" alt="foto">
+                                <b>Результат: {{result}}</b>
+                                <form ng-submit="calc3()">
+                                        <div class="form-group">
+                                                <label>Введите размер первой стороны(см)</label>
+                                                <input ng-model="side1" type="text" >
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                                <label>Введите размер второй стороны(см)</label>
+                                                <input ng-model="side2" type="text" >
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                                <label>Введите размер третьей стороны(см)</label>
+                                                <input ng-model="side3" type="text" >
+                                        </div>
+                                        <md-button class="md-primary" type="submit">Расчитать</md-button>
+                                    </form> 
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+        </md-content>
+
+
+    <!-- <b>Результат: {{result}} </b>
+    <form ng-submit="calc()">
+        <div class="form-group">
+                <label>Введите радиус</label>
+                <input ng-model="radius" type="text" >
+        </div>
+        <br>
+        <div class="form-group">
+                <label>Введите угол(Только в радианах!)</label>
+                <input ng-model="angle" type="text" >
+        </div>
+        <md-button type="submit">davai</md-button>
+    </form>  -->
+</div>

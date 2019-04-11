@@ -1,0 +1,17 @@
+{
+  "name": "labinternetprogram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.6",
+    "angular-material": "^1.1.12",
+    "angularjs": "0.0.1",
+    "mammoth": "^1.4.7"
+  }
+}

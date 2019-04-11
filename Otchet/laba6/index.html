@@ -1,0 +1,201 @@
+<link href="style.css" type="text/css" rel="stylesheet">
+<div ng-controller="laba6"  layout="row" layout-align="start center" layout-wrap>
+  <md-content>
+    <md-tabs  md-center-tabs>
+      <md-tab label="Регистрация">
+        <md-content>
+            <form " class="dialog-demo-content" ng-submit="submit()">
+                <div class="form-group">
+                 <md-input-container class="md-block">
+                                                <label  class="login-text ">Имя</label>
+                                                <input required type="text" name="clientName" ng-model="Users.name"
+                                                       minlength="1" maxlength="40" ng-pattern="/(^[A-Z|А-Я])[a-z|а-я]+/" />
+                                                
+                                        
+                                                <div ng-messages="Users.name.$error" role="alert">
+                                                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                                    Имя должно содержать только одну заглавную букву в начале и состоять только из букв!
+                                                  </div>
+                                                </div>
+                 </md-input-container>
+                
+                 <md-input-container class="md-block">
+                                <label  class="login-text ">Фамилия</label>
+                                <input required type="text" name="syreName" ng-model="Users.syrename"
+                                       minlength="1" maxlength="40" ng-pattern="/(^[A-Z|А-Я])[a-z|а-я]+/" />
+                                
+                        
+                                <div ng-messages="Users.syrename.$error" role="alert">
+                                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Фамилия должна содержать только одну заглавную букву в начале и состоять только из букв!
+                                  </div>
+                                </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                                <label  class="login-text ">Организация</label>
+                                <input required type="text" name="company" ng-model="Users.company"
+                                       minlength="2" maxlength="40"  />
+                                
+                        
+                                <div ng-messages="Users.company.$error" role="alert">
+                                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Не меннее 2 символов!
+                                  </div>
+                                </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                                <label  class="login-text ">Кредитная карта</label>
+                                <input required type="text" name="credit" ng-model="Users.credit"
+                                       minlength="1" maxlength="40" ng-pattern="/[0-9]{16,16}/" />
+                                
+                        
+                                <div ng-messages="Users.credit.$error" role="alert">
+                                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    должна содержать 16 цыфр!
+                                  </div>
+                                </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                  <label  class="login-text ">Мобильный телефон</label>
+                  <input required type="text" name="mobilephone" ng-model="Users.mobilephone"
+                         minlength="1" maxlength="40" ng-pattern="/^((\+{1}(380){1}(68|97|67|98){1})|(0)){1}\d{7}$/" />
+                  
+                
+                  <div ng-messages="Users.mobilephone.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                      Только для Украины! Содержит 10 символов.
+                    </div>
+                  </div>
+                </md-input-container>        
+                
+                <md-input-container class="md-block">
+                        <label  class="login-text ">Email</label>
+                        <input required type="email" name="clientEmail" ng-model="Users.email"
+                               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                
+                        <div ng-messages="Users.email.$error" role="alert">
+                          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                          </div>
+                        </div>
+                      </md-input-container>
+                <br>
+                <br>
+                <div layout="row" layout-align="center center">
+                        <md-button class="md-primary"  type ="submit"><h5  flex>Отправить</h5></md-button>
+                        <md-button class="md-primary" ng-click="clean()"><h5  flex>Очистить</h5></md-button>
+                </div>
+                <div>
+                
+                </form>
+        </md-content>
+      </md-tab>
+      <md-tab label="Строка для рег.выражения">
+        <md-content>
+          <form ng-submit="RegAdd()">
+            <label for="">Введите текст</label>
+              <input type="text" name="textRegular" ng-model="textR">
+              <md-button class="md-primary" ng-click="RegAdd()">Отредактировать</md-button>
+              <!-- <pr>{{textR}}</pr> -->
+              <p>{{resultReg}}</p>
+          </form>
+           
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+<!-- <form flex = "60" flex-gt-sm="20" class="dialog-demo-content" ng-submit="submit()">
+<div class="form-group">
+ <md-input-container class="md-block">
+                                <label  class="login-text ">Имя</label>
+                                <input required type="text" name="clientName" ng-model="Users.name"
+                                       minlength="1" maxlength="40" ng-pattern="/(^[A-Z|А-Я])[a-z|а-я]+/" />
+                                
+                        
+                                <div ng-messages="Users.name.$error" role="alert">
+                                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Имя должно содержать только одну заглавную букву в начале и состоять только из букв!
+                                  </div>
+                                </div>
+ </md-input-container>
+
+ <md-input-container class="md-block">
+                <label  class="login-text ">Фамилия</label>
+                <input required type="text" name="syreName" ng-model="Users.syrename"
+                       minlength="1" maxlength="40" ng-pattern="/(^[A-Z|А-Я])[a-z|а-я]+/" />
+                
+        
+                <div ng-messages="Users.syrename.$error" role="alert">
+                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                    Фамилия должна содержать только одну заглавную букву в начале и состоять только из букв!
+                  </div>
+                </div>
+</md-input-container>
+
+<md-input-container class="md-block">
+                <label  class="login-text ">Организация</label>
+                <input required type="text" name="company" ng-model="Users.company"
+                       minlength="2" maxlength="40"  />
+                
+        
+                <div ng-messages="Users.company.$error" role="alert">
+                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                    Не меннее 2 символов!
+                  </div>
+                </div>
+</md-input-container>
+
+<md-input-container class="md-block">
+                <label  class="login-text ">Кредитная карта</label>
+                <input required type="text" name="credit" ng-model="Users.credit"
+                       minlength="1" maxlength="40" ng-pattern="/[0-9]{16,16}/" />
+                
+        
+                <div ng-messages="Users.credit.$error" role="alert">
+                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                    должна содержать 16 цыфр!
+                  </div>
+                </div>
+</md-input-container>
+
+<md-input-container class="md-block">
+  <label  class="login-text ">Мобильный телефон</label>
+  <input required type="text" name="mobilephone" ng-model="Users.mobilephone"
+         minlength="1" maxlength="40" ng-pattern="/^((\+{1}(380){1}(68|97|67|98){1})|(0)){1}\d{7}$/" />
+  
+
+  <div ng-messages="Users.mobilephone.$error" role="alert">
+    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+      Только для Украины! Содержит 10 символов.
+    </div>
+  </div>
+</md-input-container>        
+
+<md-input-container class="md-block">
+        <label  class="login-text ">Email</label>
+        <input required type="email" name="clientEmail" ng-model="Users.email"
+               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+        <div ng-messages="Users.email.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+      </md-input-container>
+<br>
+<br>
+<div layout="row" layout-align="center center">
+        <md-button class="md-primary"  type ="submit"><h5  flex>Отправить</h5></md-button>
+        <md-button class="md-primary" ng-click="clean()"><h5  flex>Очистить</h5></md-button>
+</div>
+<div>
+<input type="text" ng-model="textR">
+<md-buton ng-click="RegAdd()"></md-buton>
+<p>{{resulteg}}</p>
+</div>
+</form> -->
+
+</div>

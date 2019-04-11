@@ -1,0 +1,46 @@
+
+<div ng-controller="laba3">
+   
+    
+    <div layout="column">
+            <div layout="row" layout-align="center end" flex="20" style="width: 400px; border: 1px solid black;">
+                    <p  flex="40">
+                        {{inputCalc}}
+                    </p>
+                </div>
+        <div layout="row" flex="20">
+            <md-button flex="10" ng-click="expression('c')">c</md-button>
+            <md-button flex="10" ng-click="expression('/')">/</md-button>
+            <md-button flex="10" ng-click="expression('*')">x</md-button>
+            <md-button flex="10" ng-click="expression('del')">del</md-button>
+        </div>
+
+        <div layout="row" fle="20">
+            <md-button flex="10" ng-click="expression('7')">7</md-button>
+            <md-button flex="10" ng-click="expression('8')">8</md-button>
+            <md-button flex="10" ng-click="expression('9')">9</md-button>
+            <md-button flex="10" ng-click="expression('-')">-</md-button>
+        </div>
+
+        <div layout="row" flex="20">
+            <md-button flex="10" ng-click="expression('4')">4</md-button>
+            <md-button flex="10" ng-click="expression('5')">5</md-button>
+            <md-button flex="10" ng-click="expression('6')">6</md-button>
+            <md-button flex="10" ng-click="expression('+')">+</md-button>
+        </div>
+
+        <div layout="row" flex="20">
+            <md-button flex="10" ng-click="expression('1')">1</md-button>
+            <md-button flex="10" ng-click="expression('2')">2</md-button>
+            <md-button flex="10" ng-click="expression('3')">3</md-button>
+            <md-button flex="10" ng-click="expression('**')">pow</md-button>
+        </div>
+
+        <div layout="row" flex="20">
+            <md-button flex="10" ng-click="expression('//')">sqrt</md-button>
+            <md-button flex="10" ng-click="expression('0')">0</md-button>
+            <md-button flex="10" ng-click="expression('.')">,</md-button>
+            <md-button flex="10" ng-click="expression('=')">=</md-button>
+        </div>
+    </div>
+</div>
