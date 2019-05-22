@@ -23,8 +23,9 @@ export function laba6($scope, $document){
     // }
     // $scope.resultREg = arr.join(" ");
     $scope.submit = function() {
+        
         console.log($scope.Users);
-        alert($scope.Users);
+        alert("Поздравляю "+$scope.Users.name+" "+$scope.Users.syrename+" вы успешно зарегистрировались!");
     };
     $scope.RegAdd = function(){
     console.log("RegAdd")

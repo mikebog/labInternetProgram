@@ -5,4 +5,15 @@
     color: #761c19;
     font-family: 'Lobster', cursive;
   }
-  
+.test md-tabs md-content md-tab-content {
+  background: #761c19;
+      width:700px;
+      height: 700px;
+  }
+
+.tessst md-tab-content {
+  width: 700px;
+}
+.md-tab-content#tab-content-0 {
+  width: 700px;
+}

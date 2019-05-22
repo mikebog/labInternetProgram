@@ -1,10 +1,11 @@
 <link href="style.css" type="text/css" rel="stylesheet">
-<div ng-controller="laba6"  layout="row" layout-align="start center" layout-wrap>
-  <md-content>
-    <md-tabs  md-center-tabs>
-      <md-tab label="Регистрация">
-        <md-content>
-            <form " class="dialog-demo-content" ng-submit="submit()">
+<div ng-controller="laba6"  layout="row" layout-align="start center"  >
+  <md-content  clasa="test">
+    <md-tabs md-dynamic-height md-dynamic-width>
+      <md-tab label="Регистрация" >
+        
+          <div s>
+            <form  class="dialog-demo-content" ng-submit="submit()" class="center-block" style="width: 400px;">
                 <div class="form-group">
                  <md-input-container class="md-block">
                                                 <label  class="login-text ">Имя</label>
@@ -78,7 +79,8 @@
                 
                         <div ng-messages="Users.email.$error" role="alert">
                           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                            Ваш адрес электронной почты должен быть от 10 до 100 символов.
+                            и иметь примерно такой вид user@gmail.com
                           </div>
                         </div>
                       </md-input-container>
@@ -91,7 +93,7 @@
                 <div>
                 
                 </form>
-        </md-content>
+              </div>
       </md-tab>
       <md-tab label="Строка для рег.выражения">
         <md-content>
