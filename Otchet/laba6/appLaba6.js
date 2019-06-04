@@ -5,6 +5,7 @@ export function laba6($scope, $document){
         hello : "wwwww"
     };
     $scope.textR ="";
+    $scope.errorTime = 0;
     var testString = "advfva asd saasd aaddsddsa ahhhhhha";
     // var arr = textR.split(" ");
 
@@ -23,9 +24,19 @@ export function laba6($scope, $document){
     // }
     // $scope.resultREg = arr.join(" ");
     $scope.submit = function() {
-        
-        console.log($scope.Users);
-        alert("Поздравляю "+$scope.Users.name+" "+$scope.Users.syrename+" вы успешно зарегистрировались!");
+        if($scope.errorTime<5) {
+            if (typeof $scope.Users.credit  =="undefined" || $scope.Users.credit.length < 16 || $scope.Users.credit.length > 16) {
+                $scope.Users.credit="";
+                alert("ВЫ неправильно ввели значение кредитной карты!. Осторожно у вас " + (5-$scope.errorTime) + " попыток");
+                $scope.errorTime = $scope.errorTime + 1
+                return
+            }
+            console.log($scope.Users);
+            alert("Поздравляю " + $scope.Users.name + " " + $scope.Users.syrename + " вы успешно зарегистрировались!");
+        } else {
+            $scope.dontShow = true;
+            alert("возможность ввода отключена!")
+        }
     };
     $scope.RegAdd = function(){
     console.log("RegAdd")

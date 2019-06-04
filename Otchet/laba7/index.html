@@ -1,8 +1,34 @@
+<link href="style.css" type="text/css" rel="stylesheet">
+
 <div ng-controller="laba7" >
-    <p>{{testL}}</p>
-    <p id="a1" ng-mouseenter="removeAbzac(id)">
-        Какойто абзац
+    <md-nav-bar
+            md-no-ink-bar="disableInkBar"
+            md-selected-nav-item="currentNavItem"
+            nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-click="getZadanie()" name="page1">
+            1-2 Задание
+        </md-nav-item>
+        <md-nav-item md-nav-click="getForm()" name="page2" >
+            Форма
+        </md-nav-item>
+    </md-nav-bar>
+    <div ng-show="OneTwoZ">
+    <p id="main" ng-mouseenter="removeAbzac(id)">
+        jQuery ([dʒeɪ kwɪəri]) — библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML. Библиотека jQuery помогает легко получать доступ к любому элементу DOM, обращаться к атрибутам и содержимому элементов DOM, манипулировать ими. Также библиотека jQuery предоставляет удобный API для работы с AJAX. Разработка jQuery ведётся командой добровольцев на пожертвования
     </p>
-    <p>еще какойто абзац</p>
-    <p>Последний абзац!</p>
+    <p class="test">HEllo</p>
+    <div class="block-square" id="blockSquare"></div>
+    </div>
+    <div ng-show="formZ">
+        <p>Введите пароль:</p>
+        <input type="text" >
+        <br>
+        <input type="checkbox" name="option2" value="a2" ng-click="getControl()" > Я хочу указать контрольное слово
+        <br>
+        <p ng-if="showControl" >Введите контрольное слово:
+        <input type="text">
+        </p>
+    </div>
 </div>
+
+

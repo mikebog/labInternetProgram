@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE documents SYSTEM [
+        <!ELEMENT documents (books+, articles+)>
+        <!ELEMENT books (book*)>
+        <!ELEMENT articles (article*)>
+        <!ELEMENT book (author+, title, translate?, year_publication)>
+        <!ELEMENT article (author+, title, year_publication)>
+        <!ATTLIST book id ID #REQUIRED>
+        <!ATTLIST article id ID #REQUIRED>
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT translate (#PCDATA)>
+        <!ELEMENT year_publication (#PCDATA)>
+        ]>
+<documents>
+        <books></books>
+        <articles></articles>
+</documents>
+        <documents>
+        <books>
+        <book id=“Book1”>
+        <author>Эрих Мария Ремарк</author>
+        <title>Тритоварища</title>
+        <translate>ИвановаИ.В. </translate>
+        <year_publication>2000</year_publication>
+        </book>
+        <book id=“Book2”>
+        <author>РэйБрэдбери</author>
+        <title>Вино из одуванчиков</title>
+        <translate>ПетроваА.К. </translate>
+        <year_publication>2009</ year_publication>
+        </book>
+        </books>
+        <articles>
+        <article id=“Article1” >
+        <author>Виктор Кожевников</author>
+        <title>Классификация электронных средств обучения</title>
+        <year_publication>1998</year_publication>
+        </article>
+        </articles>
+        </documents>

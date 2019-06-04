@@ -8,6 +8,8 @@ import { laba3 } from '../laba3/appLaba3.js';
 import { laba4 } from '../laba4/appLaba4.js';
 import { laba6 } from '../laba6/appLaba6.js';
 import { laba7 } from '../laba7/appLaba7.js';
+import { laba8 } from '../laba8/appLaba8.js';
+
 angular.module('App', ['ngMaterial','ngRoute'])
 .config(
   function($routeProvider,$locationProvider){
@@ -40,11 +42,16 @@ angular.module('App', ['ngMaterial','ngRoute'])
             templateUrl: "/../laba7/index.html",
             conroller: "laba7"
           })
+          .when("/laba8", {
+            templateUrl: "/../laba8/index.html",
+            conroller: "laba8"
+          })
           $locationProvider.html5Mode(true);
           // $urlRouterProvider.otherwise('/');
         })
 .controller("laba2" , laba)
-.controller("laba6" , laba6)
+    .controller("laba8" , laba8)
+    .controller("laba6" , laba6)
 .controller("laba7" , laba7)
 .controller("laba3", laba3)
 .controller("laba4", laba4)
